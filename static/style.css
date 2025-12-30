@@ -1,5 +1,6 @@
 body {
      background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3") no-repeat center/cover fixed;
+     background-color: #050016;
     font-family: Arial;
     margin: 0;
     color: white;
@@ -25,15 +26,23 @@ body {
   }
   @keyframes slide { from{transform:translateY(30px);} to{transform:translateY(0);} }
   
-  .login-bg{
-    display:flex; justify-content:center; align-items:center; height:100vh;
-    background: url("https://i.imgur.com/GWq0ZpV.jpeg") no-repeat center/cover;
-  }
+  .login-bg {
+  display:flex; justify-content:center; align-items:center; height:100vh;
+  background: url("https://images.unsplash.com/photo-1476610182048-b716b8518aae") no-repeat center/cover;
+  background-color:#050016;
+}
+
+  
   .login-card{
-    background:rgba(0,0,0,.7);
-    padding:20px; border-radius:10px;
-    text-align:center; width:300px;
-  }
+  background:rgba(0,0,0,0.7);
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 0 20px rgba(147,112,219,0.7);
+  text-align:center;
+  width:320px;
+  border:1px solid rgba(255,255,255,0.2);
+}
+
   
   input,button {
     width:80%; padding:10px; margin:8px;
@@ -49,4 +58,15 @@ body {
   table{width:100%;margin-top:20px;}
   td,th{padding:10px;border-bottom:1px solid #444;}
 
+@keyframes stars {
+  from {background-position: 0 0;}
+  to {background-position: -10000px 5000px;}
+}
+
+body {
+  animation: stars 120s linear infinite;
+}
+
+
   
+
