@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dashboard</title>
-<link rel="stylesheet" href="/static/style.css">
+<title>📚 AI Study Task Manager</title>
+<meta charset="UTF-8">
+<style>
+body{
+  background: #eef2ff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+.container{
+  background: white;
+  padding: 30px;
+  width: 60%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+button{
+  background:#22c55e;
+  border:none;
+  padding:10px 20px;
+  margin:10px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
 </head>
 <body>
+<div class="container">
+<h1>📚 AI Study Task Manager</h1>
+<p>This is the landing page for GitHub Pages.</p>
 
-<nav class="navbar">
-  <h3>📚 Study Task Manager</h3>
-  <a href="/logout">Logout</a>
-</nav>
+<a href="https://github.com/nikithabharath11-collab/AI_Task_Manager">
+<button>📌 View Full Project Code</button></a>
 
-<div class="container fade">
-<h2>Welcome, {{user}} 👋</h2>
-
-<form action="/add" method="POST" class="task-form">
-<input type="text" name="name" placeholder="Task name" required>
-<input type="date" name="deadline" required>
-<button>➕ Add Task</button>
-</form>
-
-<table>
-<tr><th>ID</th><th>Task</th><th>Deadline</th><th>Priority</th><th>Action</th></tr>
-{% for t in tasks %}
-<tr>
-<td>{{t[0]}}</td>
-<td>{{t[1]}}</td>
-<td>{{t[2]}}</td>
-<td class="{{t[3] | lower}}">{{t[3]}}</td>
-<td>
-<a href="/edit/{{t[0]}}">✏️ Edit</a>
-<a href="/delete/{{t[0]}}">🗑 Delete</a>
-</td>
-</tr>
-{% endfor %}
-</table>
-
+<p>⚠️ The project runs on Python + Flask + SQLite on your device.  
+GitHub Pages cannot execute backend code.</p>
 </div>
 </body>
 </html>
