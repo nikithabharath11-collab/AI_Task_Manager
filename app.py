@@ -4,6 +4,14 @@ import sqlite3, subprocess
 app = Flask(__name__)
 app.secret_key = "supersecretkey123"
 
+import sqlite3
+con = sqlite3.connect("database.db")
+cur = con.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT)")
+con.commit()
+con.close()
+print("Users table ready!")
+
 def run_java(deadline):
     try:
         output = subprocess.check_output(["java", "TaskHelper", deadline])
@@ -138,6 +146,7 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
 
 
