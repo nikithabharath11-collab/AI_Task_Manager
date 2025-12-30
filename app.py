@@ -39,16 +39,20 @@ def login():
 
 
 # HOME PAGE
+# HOME PAGE
 @app.route("/home")
 def home():
     if "user" not in session:
         return redirect("/")
 
-    con = sqlite3.connect("database.db")
-    cur = con.cursor()
-    cur.execute("SELECT * FROM tasks")
-    tasks = cur.fetchall()
-    con.close()
+    try:
+        con = sqlite3.connect("database.db")
+        cur = con.cursor()
+        cur.execute("SELECT * FROM tasks")
+        tasks = cur.fetchall()
+        con.close()
+    except:
+        return "Error loading tasks. Make sure 'tasks' table exists in database.db!"
 
     return render_template("index.html", tasks=tasks, user=session["user"])
 
@@ -103,4 +107,5 @@ def logout():
     return redirect("/")
 
 app.run(debug=True)
+
 
