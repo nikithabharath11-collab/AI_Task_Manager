@@ -12,25 +12,31 @@ def run_java(deadline):
         return "Low"
 
 # LOGIN
+# LOGIN
 @app.route("/", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         user = request.form["username"]
         pwd = request.form["password"]
 
-        con = sqlite3.connect("database.db")
-        cur = con.cursor()
-        cur.execute("SELECT * FROM users WHERE username=? AND password=?", (user, pwd))
-        data = cur.fetchone()
-        con.close()
+        # Connect to DB safely
+        try:
+            con = sqlite3.connect("database.db")
+            cur = con.cursor()
+            cur.execute("SELECT * FROM users WHERE username=? AND password=?", (user, pwd))
+            data = cur.fetchone()
+            con.close()
+        except:
+            return "Error connecting to database. Make sure database.db is uploaded!"
 
         if data:
             session["user"] = user
-            return redirect("/home")
+            return redirect("/home")   # 👈 This is where successful login goes
         else:
-            return render_template("login.html", error="❌ Invalid username or password")
+            return render_template("login.html", error="Invalid username or password")
 
     return render_template("login.html")
+
 
 # HOME PAGE
 @app.route("/home")
@@ -97,3 +103,4 @@ def logout():
     return redirect("/")
 
 app.run(debug=True)
+
