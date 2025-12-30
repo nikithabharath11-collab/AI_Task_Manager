@@ -11,6 +11,34 @@ def run_java(deadline):
     except:
         return "Low"
 
+
+# REGISTER PAGE
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        user = request.form["username"]
+        pwd = request.form["password"]
+
+        con = sqlite3.connect("database.db")
+        cur = con.cursor()
+        
+        # Check if user already exists
+        cur.execute("SELECT * FROM users WHERE username=?", (user,))
+        existing = cur.fetchone()
+        if existing:
+            con.close()
+            return render_template("register.html", error="⚠️ Username already exists!")
+        
+        # Insert new user
+        cur.execute("INSERT INTO users (username, password) VALUES (?, ?)", (user, pwd))
+        con.commit()
+        con.close()
+
+        return redirect("/")
+    
+    return render_template("register.html")
+
+
 # LOGIN
 # LOGIN
 @app.route("/", methods=["GET", "POST"])
@@ -110,6 +138,7 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
 
 
