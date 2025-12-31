@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background: url("https://i.imgur.com/Wo9P9Wd.jpeg") no-repeat center/cover fixed;
+    background: url("https://i.imgur.com/GN5pDqM.png") center/cover no-repeat fixed;
+
 
     color: #fff;
     backdrop-filter: blur(4px);
@@ -79,4 +80,5 @@ table {
     text-align: center;
     margin: 10px;
 }
+
 
