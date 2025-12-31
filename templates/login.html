@@ -1,12 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>Login 🌸</title>
+</head>
 <body>
 <div class="container">
-<h2>🌸 Welcome Back</h2>
+<h1>🌸 Welcome Back, Senpai 🌸</h1>
+<p class="kawaii-icons">🧸🎀🌙✨💗</p>
+
 <form method="POST">
-<input name="username" placeholder="Username" required>
-<input name="password" type="password" placeholder="Password" required>
-<button>Login 🚀</button>
+    <input type="text" name="username" placeholder="🧸 Username" required>
+    <input type="password" name="password" placeholder="🔒 Password" required>
+    <button type="submit">💗 Login 💗</button>
 </form>
-<p><a href="/register">Create new account ✨</a> | <a href="/forgot">Forgot password? 🔐</a></p>
-<p style="color:red">{{error}}</p>
+<p style="text-align:center;">
+    Don't have an account? <a href="/register">🎀 Register 🎀</a>
+</p>
 </div>
 </body>
+</html>
