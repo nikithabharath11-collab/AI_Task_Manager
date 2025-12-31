@@ -1,13 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>Register 🌙</title>
+</head>
 <body>
 <div class="container">
-<h2>🎀 Create Account</h2>
+<h1>✨ Create Your Account ✨</h1>
+<p class="kawaii-icons">🌸🐰💌🍓💗</p>
+
 <form method="POST">
-<input name="username" placeholder="Username" required>
-<input name="roll" placeholder="Roll Number" required>
-<input name="password" type="password" placeholder="Password" required>
-<button>Sign Up 💖</button>
+    <input type="text" name="username" placeholder="🐰 Username" required>
+    <input type="password" name="password" placeholder="🔒 Password" required>
+    <button type="submit">🎀 Create Account 🎀</button>
 </form>
-<p style="color:red">{{error}}</p>
-<a href="/">Back to login</a>
+
+<p style="text-align:center;">
+    Already registered? <a href="/">🌙 Login</a>
+</p>
 </div>
 </body>
+</html>
