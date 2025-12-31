@@ -1,27 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>Tasks 🌸</title>
+</head>
 <body>
-<h1>✨ Hello {{session.username}} — Your Tasks 🎀</h1>
-
 <div class="container">
-<form action="/add" method="POST">
-<input name="name" placeholder="Task Name" required>
-<input type="date" name="deadline" min="{{today}}" required>
-<select name="priority">
-<option value="High">🔴 High</option>
-<option value="Medium">🟡 Medium</option>
-<option value="Low">🟢 Low</option>
-</select>
-<button>Add Task ➕</button>
+<h1>🌸 Your Kawaii Study Tasks 🌙</h1>
+<p class="kawaii-icons">📚✨🧋🐰💗⭐</p>
+
+<form method="POST" action="/add">
+    <input name="name" type="text" placeholder="📝 Task Name">
+    <input name="deadline" type="date" min="{{min_date}}">
+    <select name="priority">
+        <option>🌸 Low</option>
+        <option>⭐ Medium</option>
+        <option>🔥 High</option>
+    </select>
+    <button type="submit">💗 Add Task 💗</button>
 </form>
-</div>
 
+<hr>
+
+<table>
 {% for t in tasks %}
-<div class="task {{t.priority|lower}}">
-<b>{{t.name}}</b> — 📅 {{t.deadline}} — ⭐ {{t.priority}}
-<br>
-<a href="/edit/{{t.id}}">✏️ Edit</a> |
-<a href="/delete/{{t.id}}">🗑 Delete</a>
-</div>
+<tr>
+<td>{{t.name}} ({{t.deadline}}) - {{t.priority}}</td>
+<td>
+<a href="/edit/{{t.id}}">✏️</a>
+<a href="/delete/{{t.id}}">🗑️</a>
+</td>
+</tr>
 {% endfor %}
+</table>
 
-<br><a href="/logout">🚪 Logout</a>
+<a href="/logout"><button>🚪 Logout</button></a>
+</div>
 </body>
+</html>
