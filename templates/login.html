@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
+<body class="bg">
 <div class="card">
-  <h2>Login to Study Manager</h2>
-  <form method="POST">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button>Login</button>
-  </form>
-  <br>
-  <a href="/register" style="color:#ffd;">Create an account</a>
-  {% if error %}<p style="color:red;">{{error}}</p>{% endif %}
+<h2>Login</h2>
+<form method="POST">
+<input name="username" placeholder="Username" required>
+<input name="password" type="password" placeholder="Password" required>
+<button>Login</button>
+</form>
+<a href="/register">Create Account</a> | <a href="/forgot">Forgot Password?</a>
+<p class="error">{{error}}</p>
 </div>
 </body>
 </html>
