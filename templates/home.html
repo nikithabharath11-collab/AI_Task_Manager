@@ -1,0 +1,27 @@
+<body>
+<h1>✨ Hello {{session.username}} — Your Tasks 🎀</h1>
+
+<div class="container">
+<form action="/add" method="POST">
+<input name="name" placeholder="Task Name" required>
+<input type="date" name="deadline" min="{{today}}" required>
+<select name="priority">
+<option value="High">🔴 High</option>
+<option value="Medium">🟡 Medium</option>
+<option value="Low">🟢 Low</option>
+</select>
+<button>Add Task ➕</button>
+</form>
+</div>
+
+{% for t in tasks %}
+<div class="task {{t.priority|lower}}">
+<b>{{t.name}}</b> — 📅 {{t.deadline}} — ⭐ {{t.priority}}
+<br>
+<a href="/edit/{{t.id}}">✏️ Edit</a> |
+<a href="/delete/{{t.id}}">🗑 Delete</a>
+</div>
+{% endfor %}
+
+<br><a href="/logout">🚪 Logout</a>
+</body>
