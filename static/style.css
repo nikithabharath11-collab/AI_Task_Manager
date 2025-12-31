@@ -1,51 +1,29 @@
-body {
-  background: url("https://i.imgur.com/29pWbst.png") no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  margin: 0;
+body.bg{
+    background: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1") center/cover fixed;
+    font-family: Arial;
 }
-
-.card {
-  width: 420px;
-  margin: 120px auto;
-  background: rgba(0,0,0,0.6);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(255,255,255,0.3);
-  text-align: center;
+.card{
+    width:350px;
+    margin:120px auto;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    padding:25px;
+    border-radius:12px;
+    color:white;
+    text-align:center;
 }
-
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: none;
-  outline: none;
+input,button{
+    width:90%;
+    padding:10px;
+    margin:8px;
+    border-radius:8px;
+    border:none;
 }
-
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: none;
-  font-weight: bold;
-  background: #22c55e;
-  cursor: pointer;
-  font-size: 16px;
+button{
+    background:#22c55e;
+    font-weight:bold;
+    color:white;
 }
-
-button:hover {
-  background: #16a34a;
-}
-
-.table-container {
-  width: 90%;
-  margin: auto;
-  margin-top: 30px;
-  background: rgba(0,0,0,0.45);
-  padding: 20px;
-  border-radius: 15px;
-}
+button:hover{ background:#16a34a; }
+.error{color:#ff4d4d;font-size:14px;}
+a{color:#d4f1ff;}
