@@ -4,17 +4,41 @@ import sqlite3, subprocess
 app = Flask(__name__)
 app.secret_key = "supersecretkey123"
 
-import sqlite3, os
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
-# Recreate database if missing or corrupted
-if not os.path.exists("database.db"):
-    con = sqlite3.connect("database.db")
-    cur = con.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, deadline TEXT NOT NULL, priority TEXT NOT NULL)")
-    con.commit()
-    con.close()
-    print("✨ Fresh database created successfully!")
+def get_db():
+    return psycopg2.connect(os.getenv("DATABASE_URL"), cursor_factory=RealDictCursor)
+
+# Create tables once
+conn = get_db()
+cur = conn.cursor()
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS users(
+    id SERIAL PRIMARY KEY,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+""")
+
+cur.execute("""
+CREATE TABLE IF NOT EXISTS tasks(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    name TEXT NOT NULL,
+    deadline TEXT NOT NULL,
+    priority TEXT NOT NULL
+);
+""")
+
+conn.commit()
+cur.close()
+conn.close()
+
+print("🟢 Database ready!")
+
 
 def run_java(deadline):
     try:
@@ -150,6 +174,7 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
 
 
