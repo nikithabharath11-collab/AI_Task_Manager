@@ -1,179 +1,51 @@
-/* ---------------- GLOBAL STYLE ---------------- */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: "Poppins", sans-serif;
-}
-
 body {
-  background: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3") no-repeat center/cover fixed;
-  background-color: #0b0d15; /* fallback color */
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background: url("https://i.imgur.com/29pWbst.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
 }
 
-/* Fade in animation for pages */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-body, .login-card, .container {
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-/* ---------------- NAVBAR ---------------- */
-.navbar{
-  width:100%;
-  padding:15px 30px;
-  background: rgba(0,0,0,0.55);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  backdrop-filter: blur(10px);
-}
-.navbar a{
-  text-decoration:none;
-  color:#b4f1ff;
-  font-weight:600;
-  margin: 0 10px;
-}
-.navbar a:hover{
-  color:#6ee7ff;
+.card {
+  width: 420px;
+  margin: 120px auto;
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  text-align: center;
 }
 
-/* ---------------- LOGIN / REGISTER CARDS ---------------- */
-.login-bg{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background: url("https://images.unsplash.com/photo-1476610182048-b716b8518aae") center/cover fixed;
-  background-color: #0b0d15;
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 
-.login-card{
-  background: rgba(0,0,0,0.75);
-  width:330px;
-  padding:25px;
-  border-radius:12px;
-  text-align:center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.18);
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  background: #22c55e;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.login-card h2{
-  margin-bottom:15px;
-  color:#fff;
-  font-weight:600;
-  letter-spacing:1px;
+button:hover {
+  background: #16a34a;
 }
 
-.login-card input{
-  width:85%;
-  padding:10px;
-  margin:10px 0;
-  outline:none;
-  border-radius:6px;
-  border:none;
-  background:#1e2330;
-  color:white;
-}
-.login-card input::placeholder{color:#9ca3af;}
-
-.login-card button{
-  width:90%;
-  padding:10px;
-  margin-top:10px;
-  background:#4f46e5;
-  border:none;
-  border-radius:6px;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
-.login-card button:hover{
-  background:#4338ca;
-}
-
-/* ---------------- DASHBOARD CONTAINER ---------------- */
-.container{
-  width:85%;
-  margin:40px auto;
-  background:rgba(0,0,0,0.55);
-  padding:25px;
-  border-radius:10px;
-  backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,0.15);
-}
-
-/* ---------------- TASK TABLE ---------------- */
-table{
-  width:100%;
-  margin-top:20px;
-  border-collapse: collapse;
-  background:rgba(15,18,30,0.6);
-  border-radius:10px;
-  overflow:hidden;
-}
-
-th{
-  background:#0f172a;
-  color:#e0f2ff;
-  padding:12px;
-  text-align:left;
-  font-weight:600;
-}
-td{
-  padding:10px;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-tr:hover{
-  background:rgba(255,255,255,0.05);
-}
-
-/* ---------------- PRIORITY COLORS ---------------- */
-.high{color:#ff6b6b;font-weight:bold;}
-.medium{color:#ffd966;font-weight:bold;}
-.low{color:#8ef58b;font-weight:bold;}
-
-/* ---------------- LINKS ---------------- */
-a{
-  text-decoration:none;
-  color:#8bafff;
-}
-a:hover{color:#b6d2ff;}
-
-/* ---------------- BUTTON STYLES ---------------- */
-.btn, .export, .logout{
-  background:#2563eb;
-  color:white;
-  padding:8px 12px;
-  border-radius:6px;
-  border:none;
-  margin:6px 3px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.btn:hover, .export:hover, .logout:hover{
-  background:#1d4ed8;
-}
-
-/* ---------------- PDF BUTTON ---------------- */
-.export{
-  background:#10b981;
-}
-.export:hover{
-  background:#059669;
-}
-
-.logout{
-  background:#dc2626;
-}
-.logout:hover{
-  background:#b91c1c;
+.table-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  background: rgba(0,0,0,0.45);
+  padding: 20px;
+  border-radius: 15px;
 }
