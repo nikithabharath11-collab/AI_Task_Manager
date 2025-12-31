@@ -1,29 +1,64 @@
-body.bg{
-    background: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1") center/cover fixed;
-    font-family: Arial;
+/* Pink aesthetic background */
+body.pinkbg{
+    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
+
+/* Frosted glass card */
 .card{
-    width:350px;
-    margin:120px auto;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(12px);
-    padding:25px;
-    border-radius:12px;
-    color:white;
-    text-align:center;
+    max-width: 350px;
+    margin: 120px auto;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(15px);
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    color: #5a314a;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
-input,button{
-    width:90%;
-    padding:10px;
-    margin:8px;
-    border-radius:8px;
-    border:none;
+
+.card h2 {
+    font-weight: 600;
+    color: #b0296f;
 }
+
+input, button{
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+input{
+    background: white;
+    border: 1px solid #ffb6c1;
+}
+
 button{
-    background:#22c55e;
-    font-weight:bold;
+    background:#ff4f8b;
     color:white;
+    font-weight:bold;
 }
-button:hover{ background:#16a34a; }
-.error{color:#ff4d4d;font-size:14px;}
-a{color:#d4f1ff;}
+
+button:hover{
+    background:#ff266c;
+}
+
+a{
+    color:#7a1053;
+    text-decoration:none;
+    font-size:14px;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.error{
+    color:#a10000;
+    font-size:14px;
+}
