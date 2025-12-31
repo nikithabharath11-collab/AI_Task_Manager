@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head><link rel="stylesheet" href="/static/style.css"></head>
 <body>
-<div class="card">
-  <h2>Edit Task</h2>
-  <form method="POST">
-    <input type="text" name="name" value="{{task.name}}" required>
-    <input type="date" name="deadline" value="{{task.deadline}}" required>
-    <select name="priority">
-      <option>{{task.priority}}</option>
-      <option>High</option><option>Medium</option><option>Low</option>
-    </select>
-    <button>Update</button>
-  </form>
+<div class="container">
+<h2>✏️ Edit Task</h2>
+<form method="POST">
+<input name="name" value="{{task.name}}">
+<input type="date" name="deadline" value="{{task.deadline}}">
+<select name="priority">
+<option {% if task.priority=='High' %}selected{% endif %}>High</option>
+<option {% if task.priority=='Medium' %}selected{% endif %}>Medium</option>
+<option {% if task.priority=='Low' %}selected{% endif %}>Low</option>
+</select>
+<button>Update 💾</button>
+</form>
 </div>
 </body>
-</html>
