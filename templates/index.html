@@ -1,41 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Dashboard</title>
-<link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-
-<nav class="navbar">
-  <h3>📚 Study Task Manager</h3>
-  <a href="/logout">Logout</a>
-</nav>
-
-<div class="container fade">
+<!DOCTYPE html><html><body>
 <h2>Welcome, {{user}} 👋</h2>
-
-<form action="/add" method="POST" class="task-form">
-<input type="text" name="name" placeholder="Task name" required>
-<input type="date" name="deadline" required>
-<button>➕ Add Task</button>
+<form method="POST" action="/add">
+    <input name="name" placeholder="Task Name">
+    <input name="deadline" type="date">
+    <button>Add Task</button>
 </form>
+<br>
+<a href="/export">📄 Export PDF</a> | <a href="/logout">Logout</a>
 
 <table>
-<tr><th>ID</th><th>Task</th><th>Deadline</th><th>Priority</th><th>Action</th></tr>
+<tr><th>Task</th><th>Deadline</th><th>Priority</th></tr>
 {% for t in tasks %}
 <tr>
-<td>{{t[0]}}</td>
-<td>{{t[1]}}</td>
-<td>{{t[2]}}</td>
-<td class="{{t[3] | lower}}">{{t[3]}}</td>
-<td>
-<a href="/edit/{{t[0]}}">✏️ Edit</a>
-<a href="/delete/{{t[0]}}">🗑 Delete</a>
-</td>
+<td>{{t.name}}</td><td>{{t.deadline}}</td><td>{{t.priority}}</td>
 </tr>
 {% endfor %}
 </table>
-
-</div>
-</body>
-</html>
+</body></html>
