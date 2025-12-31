@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body class="login-bg">
-    <div class="login-card">
-        <h2>📝 Create Account</h2>
-        
-        {% if error %}
-          <p style="color:red;">{{ error }}</p>
-        {% endif %}
-        
-        <form method="POST">
-            <input type="text" name="username" placeholder="New Username" required>
-            <input type="password" name="password" placeholder="New Password" required>
-            <button type="submit">Register</button>
-        </form>
-
-        <p style="margin-top:10px;">
-            Already have an account? 
-            <a href="/" style="color:#22c55e;">Login</a>
-        </p>
-    </div>
-</body>
-</html>
+<!DOCTYPE html><html><body class="login-bg">
+<div class="login-card">
+    <h2>📝 Register</h2>
+    {% if error %}<p style="color:red">{{error}}</p>{% endif %}
+    <form method="POST">
+        <input name="username" placeholder="Username" required><br>
+        <input name="roll" placeholder="Roll Number" required><br>
+        <input name="password" type="password" placeholder="Password" required><br>
+        <button>Register</button>
+    </form>
+    <a href="/">Back to Login</a>
+</div>
+</body></html>
